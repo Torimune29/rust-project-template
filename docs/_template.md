@@ -59,10 +59,17 @@
 
 * [editorconfig](https://editorconfig.org/): maintaining coding style
     * Set Project-specified style into [.editorconfig](../.editorconfig)
+    <!-- editorconfig-checker-disable -->
+    ```text
+    # .editorconfig#L1-L14
+    
+    ```
+    <!-- editorconfig-checker-enable -->
+
     * Add editorconfig extension in editor
 * [Codacy](https://www.codacy.com/)
     * Set Project-specified directory into [./codacy.yml](../.codacy.yml)
-    * Add repository in Codacy
+    <!-- editorconfig-checker-disable -->
     ```yaml
     # .codacy.yml
     
@@ -74,6 +81,9 @@
       - "tools/**"
     
     ```
+    <!-- editorconfig-checker-enable -->
+
+    * Add repository in Codacy
 
 ## Dependency Graph
 

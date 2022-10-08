@@ -1,3 +1,3 @@
 # all-project-template
 
-See: [project-template-information](docs/project-template.md)
+See: [Github Pages](https://torimune29.github.io/all-project-template/#/_template)
