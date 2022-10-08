@@ -1,27 +1,10 @@
 {
-  "name": "project-template",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
     "prepare": "husky install",
     "release:patch": "standard-version --release-as patch",
     "release:minor": "standard-version --release-as minor",
     "release:major": "standard-version --release-as major"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Torimune29/project-template.git"
-  },
-  "author": "Torimune29",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Torimune29/project-template/issues"
-  },
-  "homepage": "https://github.com/Torimune29/project-template#readme",
   "devDependencies": {
     "editorconfig-checker": "^4.0.2",
     "git-cz": "^4.9.0",
