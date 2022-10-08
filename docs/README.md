@@ -2,4 +2,4 @@
 
 ## About Template
 
-See: [all-project-template](template)
+See: [project-template](template)

@@ -1,4 +1,4 @@
-# all-project-template
+# project-template
 
 ## Directory Hierarcy
 
@@ -97,7 +97,7 @@
 
 ```mermaid
 flowchart TB
-    repo(all-project-template)
+    repo(project-template)
     repo
     subgraph features
         repo --use in CLI--> cheat
