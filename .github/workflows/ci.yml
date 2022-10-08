@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+    workflow_dispatch:
+
 
 jobs:
-  deploy-pages:
+  static-analysis:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
