@@ -1,5 +1,23 @@
 # project-template
 
+## Prerequisite
+
+* npm
+* direnv(Optional)
+* navi(Optional)
+
+## Usage
+
+```bash
+# Install node_modules
+npm install
+# Setup pre-commit using husky, lint-staged
+npx husky install
+npx husky add .husky/pre-commit "\"$(npm bin)\"/lint-staged"
+# Optional: setup user environment
+diernv allow
+```
+
 ## Directory Hierarcy
 
 * Base: [Folder-Structure-Conventions](https://github.com/kriasoft/Folder-Structure-Conventions)
