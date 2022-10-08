@@ -1,0 +1,7 @@
+---
+exclude_paths:
+  - ".*/**"
+  - "build/**"
+  - "docs/**"
+  - "tests/**"
+  - "tools/**"
