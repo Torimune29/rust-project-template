@@ -21,7 +21,7 @@
   * Set Project-specified style into [.editorconfig](../.editorconfig)
   * Add editorconfig extension in editor
 * [Codacy](https://www.codacy.com/)
-  * Set Project-specified directory into [./codacy.yml](../..codacy.yml)
+  * Set Project-specified directory into [./codacy.yml](../.codacy.yml)
   * Add repository in Codacy
 
 ## Author
