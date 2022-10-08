@@ -62,7 +62,10 @@ flowchart TB
     ```json5
     // package.json#L15-L18
     
-    
+    "lint-staged": {
+      "*.*": [
+        "editorconfig-checker"
+      ]
     ```
 
 * [direnv](https://github.com/direnv/direnv): setting environment variables
