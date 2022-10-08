@@ -57,6 +57,7 @@
     ```bash
     # .editorconfig#L1-L14
     
+   
     ```
     <!-- editorconfig-checker-enable -->
 
@@ -92,3 +93,9 @@ graph TB
 
 [Torimune29](https://github.com/Torimune29)
 
+## License
+
+```txt
+// LICENSE
+
+```

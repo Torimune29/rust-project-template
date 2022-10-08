@@ -16,6 +16,5 @@ jobs:
           submodules: true
           fetch-depth: 0
       # coding style
-      - name: EditorConfig lint
-        uses: greut/eclint-action@v0.3.6
-
+      - uses: editorconfig-checker/action-editorconfig-checker@main
+      - run: editorconfig-checker
