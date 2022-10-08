@@ -18,5 +18,19 @@ jobs:
       # coding style
       - name: EditorConfig lint
         uses: greut/eclint-action@v0.3.6
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+          fetch-depth: 0
+      # document
+      - name: docsify-action
+        uses: tool3/docsify-action@v1.0.3
+        with:
+          github_token: ${{ secrets.GP_TOKEN }}
+
+
 
 
