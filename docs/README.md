@@ -1,3 +1,6 @@
-# all-project-template
+# Project Title
 
-See: [project-template-information](docs/project-template.md)
+
+## About Template
+
+See: [all-project-template](_template)

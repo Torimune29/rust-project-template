@@ -1,0 +1,24 @@
+{
+  "name": "all-project-template",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "release:patch": "standard-version --release-as patch",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Torimune29/all-project-template.git"
+  },
+  "author": "Torimune29",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Torimune29/all-project-template/issues"
+  },
+  "homepage": "https://github.com/Torimune29/all-project-template#readme"
+}
