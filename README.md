@@ -59,7 +59,7 @@ flowchart TB
 * [lint-staged](https://github.com/okonet/lint-staged): setting auto lint on staging
     * Set extra lint method into [package.json](./package.json)
 
-    ```json
+    ```json5
     // package.json#L15-L18
     
     
