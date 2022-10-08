@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/Torimune29/project-template/issues"
   },
-  "homepage": "https://github.com/Torimune29/project-template#readme"
+  "homepage": "https://github.com/Torimune29/project-template#readme",
+  "devDependencies": {
+    "editorconfig-checker": "^4.0.2",
+    "git-cz": "^4.9.0",
+    "standard-version": "^9.5.0"
+  }
 }
