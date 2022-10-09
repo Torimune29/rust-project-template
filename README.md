@@ -6,7 +6,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/397fa9ad1fd64e089947b96118b1a87c)](https://www.codacy.com/gh/Torimune29/cli-tools/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Torimune29/cli-tools&amp;utm_campaign=Badge_Grade)
 <!-- editorconfig-checker-enable -->
 
-Project Template for any programming development environment
+Rust Project Template
 
 ## Prerequisite
 
@@ -19,10 +19,13 @@ Project Template for any programming development environment
 
 ### Installation
 
-    ```bash
-    # Install rust using .tool-versions
-    asdf install
-    ```
+```bash
+# Install rust using .tool-versions
+asdf install
+# Install tools
+rustup component add rustfmt clippy 
+cargo install cargo-release
+```
 
 ## Author
 
