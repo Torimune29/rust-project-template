@@ -24,28 +24,6 @@ Project Template for any programming development environment
     asdf install
     ```
 
-### How to use
-
-1. Develop
-1. Release
-    * If first-release,
-
-    ```bash
-    # Edit first version in package.json
-    # If fixed, execute release
-    npm run release:first
-    ```
-
-    * If not first-release,
-
-    ```bash
-    npm run release:major
-    # or
-    npm run release:minor
-    # or
-    npm run release:patch
-    ```
-
 ## Author
 
 [Torimune29](https://github.com/Torimune29)
