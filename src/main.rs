@@ -1,3 +1,5 @@
+mod budget;
+mod utility;
 use clap::Parser;
 // Parserを継承した構造体はArgの代わりに使用することが可能。
 #[derive(Debug, Parser)]
@@ -21,6 +23,8 @@ struct AppArg {
 }
 
 fn main() {
+    budget::budget();
+    utility::file::read();
     let arg: AppArg = AppArg::parse();
     for _ in 0..arg.count {
         println!(
