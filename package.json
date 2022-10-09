@@ -13,11 +13,13 @@
     "git-cz": "^4.9.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "markdownlint-cli2": "^0.5.1",
     "standard-version": "^9.5.0"
   },
   "lint-staged": {
     "*.*": [
-      "editorconfig-checker"
+      "editorconfig-checker",
+      "markdownlint-cli2"
     ]
   }
 }
