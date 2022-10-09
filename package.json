@@ -18,6 +18,11 @@
   "lint-staged": {
     "*.*": [
       "editorconfig-checker"
+    ],
+    "*.rs": [
+      "bash -c \"cargo check && :\"",
+      "cargo fmt --",
+      "bash -c \"cargo clippy -- --deny warnings && :\""
     ]
   },
   "name": "cli-tools",

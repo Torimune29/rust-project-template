@@ -12,3 +12,10 @@
 
 !*.md
 !LICENSE
+
+!*.rs
+
+
+# Added by cargo
+
+/target
