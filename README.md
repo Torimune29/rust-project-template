@@ -170,7 +170,22 @@ flowchart TB
     <!-- editorconfig-checker-disable -->
     ```bash
     # .markdownlint-cli2.jsonc
-
+    
+    {
+      "config": {
+        // follow google coding style
+        "MD007": { "indent": 4 },
+        // check editorconfig instead
+        "MD013": false
+      },
+      "globs": [
+        "**/*.md",
+        "!node_modules",
+        "!LICENSE*",
+        "!CHANGELOG*"
+      ]
+    }
+    
     ```
     <!-- editorconfig-checker-enable -->
 
