@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/Torimune29/all-project-template/compare/v0.0.2...v0.0.3) (2022-10-09)
+
+
+### Features
+
+* 🎸 add initrepo ([ce3a2f8](https://github.com/Torimune29/all-project-template/commit/ce3a2f891e183eb07af30b18bd7431ff52183475))
+* 🎸 add markdownlint-cli2 check ([8f9dbf9](https://github.com/Torimune29/all-project-template/commit/8f9dbf9170b19d832d13b166e5597c98b114f56e))
+
+
+### Bug Fixes
+
+* 🐛 editorconfig-checker ignorelist ([ccb15f9](https://github.com/Torimune29/all-project-template/commit/ccb15f9187bf08cb77e3a94805e2fec8e98969b3))
+
 ### [0.0.2](https://github.com/Torimune29/all-project-template/compare/v0.0.1...v0.0.2) (2022-10-09)
 
 

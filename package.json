@@ -1,5 +1,5 @@
 {
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "prepare": "husky install",
     "initrepo": "rm -rf CHANGELOG.md && sed -i -e \"/\\\"version\\\":/Id\" package.json && npm init -y",
