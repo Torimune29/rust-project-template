@@ -61,6 +61,8 @@ Project Template for any programming development environment
 
 ### Merge project-template change into your branch
 
+https://qiita.com/doihei/items/223c273a1aef467fc3fd
+
 ```bash
 git remote add template http://github.com/Torimune29/project-template
 git fetch --all
