@@ -1,5 +1,11 @@
 # project-template
 
+<!-- editorconfig-checker-disable -->
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Torimune29/project-template/CI?label=CI)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Torimune29/project-template/CD?label=CD)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/397fa9ad1fd64e089947b96118b1a87c)](https://www.codacy.com/gh/Torimune29/project-template/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Torimune29/project-template&amp;utm_campaign=Badge_Grade)
+<!-- editorconfig-checker-enable -->
+
 Project Template for any programming development environment
 
 ## Prerequisite
