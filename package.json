@@ -16,5 +16,6 @@
     "*.*": [
       "editorconfig-checker"
     ]
-  }
+  },
+  "version": null
 }
