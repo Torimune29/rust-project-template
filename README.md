@@ -59,6 +59,15 @@ Project Template for any programming development environment
     npm run release:patch
     ```
 
+### Merge project-template change into your branch
+
+```bash
+git remote add template http://github.com/Torimune29/project-template
+git fetch --all
+git merge template/main --allow-unrelated-histories
+# Resolve conflicts...
+```
+
 ## Features and Dependency Graph
 
 ```mermaid
