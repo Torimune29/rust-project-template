@@ -22,7 +22,8 @@
     "*.rs": [
       "bash -c \"cargo check && :\"",
       "cargo fmt --",
-      "bash -c \"cargo clippy -- --deny warnings && :\""
+      "bash -c \"cargo clippy -- --deny warnings && :\"",
+      "bash -c \"cargo test -- && :\""
     ]
   },
   "name": "cli-tools",

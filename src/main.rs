@@ -1,4 +1,8 @@
 use clap::Parser;
+// use serde::{Deserialize, Serialize};
+// use npm_package_json;
+use std::fs::File;
+use std::io::BufReader;
 
 // Parserを継承した構造体はArgの代わりに使用することが可能。
 #[derive(Debug, Parser)]
@@ -22,6 +26,11 @@ struct AppArg {
 }
 
 fn main() {
+    let reader = BufReader::new(File::open("package.json").unwrap());
+    let deserialized: npm_package_json::Package = serde_json::from_reader(reader).unwrap();
+    println!("deserialized = {:?}", deserialized);
+    println!("version = {}", deserialized.version);
+
     let arg: AppArg = AppArg::parse();
     for _ in 0..arg.count {
         println!(
