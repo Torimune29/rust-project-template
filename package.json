@@ -1,4 +1,5 @@
 {
+  "version": "0.0.2",
   "scripts": {
     "prepare": "husky install",
     "release:patch": "standard-version --release-as patch",
@@ -16,6 +17,5 @@
     "*.*": [
       "editorconfig-checker"
     ]
-  },
-  "version": null
+  }
 }
