@@ -1,27 +1,52 @@
 # project-template
 
+Project Template for any programming development environment,
+
 ## Prerequisite
 
 * npm
 * direnv(Optional)
 * navi(Optional)
 
-## Installation
+## Usage
+### Installation
 
-1. Create new your own repo using this repo "Use this template"
+1. Create new your own repo using this repo `Use this template`
 1. Setup inital settings below:
 
     ```bash
+    # Init repository
+    #  Delete project-template CHANGELOG and version, and execute npm init -y
+    npm run initrepo
     # Install node_modules
     npm install
     # Setup pre-commit using husky, lint-staged
     npx husky install
     npx husky add .husky/pre-commit "\"$(npm bin)\"/lint-staged"
     # Optional: if you have direnv, setup user environment
-    diernv allow
+    direnv allow
     ```
+### How to use
 
 1. Develop
+1. Release
+    * If first-release,
+
+    ```bash
+    # Edit first version in package.json
+    # If fixed, execute release
+    npm run release:first
+    ```
+
+    * If not first-release,
+
+    ```bash
+    npm run release:major
+    # or
+    npm run release:minor
+    # or
+    npm run release:patch
+    ```
 
 ## Features and Dependency Graph
 
@@ -97,13 +122,6 @@ flowchart TB
     * Set Project-specified cheatsheet into [cheats directory](../tools/cheats/)
     * Execute `navi` with `NAVI_PATH=(project-root)/tools/cheats` to load above
         * Recommend: set environment on [.envrc](../.envrc)
-
-    ```bash
-    # .envrc#L1-L2
-    
-    export NAVI_PATH="tools/cheats:$NAVI_PATH"
-    alias gc="git-cz"
-    ```
 
     ```bash
     # tools/cheats/sample.cheat
