@@ -28,6 +28,10 @@ indent_size = 4
 indent_size = 4
 indent_style = tab
 
+[*.rs]  # style guide - Learn Rust
+indent_size = 4
+max_line_length = 99
+
 [*.sh]  # google
 shell_variant      = bash
 switch_case_indent = true
