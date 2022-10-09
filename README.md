@@ -111,9 +111,9 @@ flowchart TB
     },
     "lint-staged": {
       "*.*": [
-        "editorconfig-checker",
-        "markdownlint-cli2"
+        "editorconfig-checker"
       ]
+    }
     ```
     <!-- editorconfig-checker-enable -->
 
