@@ -99,12 +99,12 @@ flowchart TB
 * [lint-staged](https://github.com/okonet/lint-staged): setting auto lint on staging
     <!-- editorconfig-checker-disable -->
     ```json5
-    // package.json#L18-L21
+    // package.json#L18-L22
     
+      "lint-staged": "^13.0.3",
+      "standard-version": "^9.5.0"
     },
     "lint-staged": {
-      "*.*": [
-        "editorconfig-checker"
     ```
     <!-- editorconfig-checker-enable -->
 
@@ -158,8 +158,8 @@ flowchart TB
     indent_size = 2
     insert_final_newline = true
     trim_trailing_whitespace = true
+    max_line_length = 120  # own rule
     
-    # document
     ```
     <!-- editorconfig-checker-enable -->
 
