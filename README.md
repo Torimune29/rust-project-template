@@ -84,6 +84,7 @@ flowchart TB
     # .envrc
     
     export NAVI_PATH="tools/cheats:$NAVI_PATH"
+    alias gc="git-cz"
     
     # export GIT_AUTHOR_NAME=
     # export GIT_AUTHOR_EMAIL=
@@ -101,7 +102,7 @@ flowchart TB
     # .envrc#L1-L2
     
     export NAVI_PATH="tools/cheats:$NAVI_PATH"
-    
+    alias gc="git-cz"
     ```
 
     ```bash
