@@ -24,6 +24,10 @@ insert_final_newline = false
 [*.{py,py.tpl}]  # google
 indent_size = 4
 
+[*.go]  # effective go
+indent_size = 4
+indent_style = tab
+
 [*.sh]  # google
 shell_variant      = bash
 switch_case_indent = true
