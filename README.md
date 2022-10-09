@@ -101,10 +101,11 @@ flowchart TB
     ```json5
     // package.json#L18-L22
     
-      "lint-staged": "^13.0.3",
-      "standard-version": "^9.5.0"
-    },
     "lint-staged": {
+      "*.*": [
+        "editorconfig-checker"
+      ]
+    }
     ```
     <!-- editorconfig-checker-enable -->
 
