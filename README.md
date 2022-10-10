@@ -26,6 +26,8 @@ asdf install
 rustup component add rustfmt clippy 
 cargo install cargo-release
 cargo install --locked cargo-deny && cargo deny init
+# If release, fix version in Cargo.toml and cargo release
+cargo release --no-publish --execute
 ```
 
 ## Author
