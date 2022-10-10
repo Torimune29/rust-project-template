@@ -25,6 +25,7 @@ asdf install
 # Install tools
 rustup component add rustfmt clippy 
 cargo install cargo-release
+cargo install --locked cargo-deny && cargo deny init
 ```
 
 ## Author

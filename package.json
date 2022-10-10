@@ -17,7 +17,8 @@
   },
   "lint-staged": {
     "*.*": [
-      "editorconfig-checker"
+      "editorconfig-checker",
+      "bash -c \"cargo deny check -- && :\""
     ],
     "*.rs": [
       "bash -c \"cargo check && :\"",
