@@ -1,6 +1,6 @@
 [package]
 name = "rust-project-template"
-version = "0.0.2"
+version = "0.0.3"
 edition = "2021"
 authors = [ "Torimune29 <71534350+Torimune29@users.noreply.github.com>" ]
 license = "MIT"
