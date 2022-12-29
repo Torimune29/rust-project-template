@@ -1,14 +1,14 @@
-*
-!.*
-!.gitignore
-!.gitattributes
+/*
+!./.*
+!/.gitignore
+!/.gitattributes
 
-!docs/
-!src/
-!tests/
-!tools/
+!/docs/
+!/src/
+!/tests/
+!/tools/
 
-!package.json
+!/package.json
 
-!*.md
-!LICENSE
+!/*.md
+!/LICENSE
