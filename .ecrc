@@ -1,3 +1,0 @@
-{
-  "Exclude": ["^package.json", "^CHANGELOG.*$", "^LICENSE.*$"]
-}

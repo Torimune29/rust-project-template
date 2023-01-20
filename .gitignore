@@ -1,16 +1,2 @@
-/*
-!./.*
-!/.gitignore
-!/.gitattributes
-
-!/docs/
-!/src/
-!/tests/
-!/tools/
-
-!/package.json
-
-!/*.md
-!/LICENSE
-
-# see: https://github.com/glidenote/dotfiles/blob/master/.gitignore
+.pre-commit-config.yaml
+.direnv/
