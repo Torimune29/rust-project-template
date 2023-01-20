@@ -32,7 +32,7 @@
       apps = {
         default = {
           type = "app";
-          program = "${pkgs.bash}/bin/bash";
+          program = "${pkgs.pre-commit}/bin/pre-commit";
         };
       };
       checks = {
