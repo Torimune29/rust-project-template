@@ -19,7 +19,7 @@ Project Template for any programming development environment
 ### Installation
 
 1. Create new your own repo using this repo `Use this template`
-1. Setup inital settings below:
+1. Setup initial settings below:
 
     ```bash
     # Init repository
@@ -61,7 +61,7 @@ Project Template for any programming development environment
 
 ### Merge project-template change into your branch
 
-https://qiita.com/doihei/items/223c273a1aef467fc3fd
+<https://qiita.com/doihei/items/223c273a1aef467fc3fd>
 
 ```bash
 git remote add template http://github.com/Torimune29/project-template

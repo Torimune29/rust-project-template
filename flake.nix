@@ -60,6 +60,7 @@
           };
 
           settings = {
+            yamllint.relaxed = true;
             markdownlint.config = {
               # check editorconfig instead
               MD007 = false;
