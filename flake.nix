@@ -15,19 +15,8 @@
       pkgs = import nixpkgs {inherit system;};
       pre-commit = pre-commit-hooks.lib."${system}".run;
       pre-commit-excludes = ["LICENSE" "CHANGELOG.md"];
-      pre-commit-pkgs = with pkgs; [
+      devShells-default-pkgs = with pkgs; [
         commitizen
-        typos
-        yamllint
-        nodePackages.markdownlint-cli
-        editorconfig-checker
-        black
-        python310Packages.flake8
-        hadolint
-        shellcheck
-        actionlint
-        alejandra
-
         navi
       ];
     in {
@@ -70,6 +59,7 @@
             flake8.enable = true;
             hadolint.enable = true;
             shellcheck.enable = true;
+            shfmt.enable = true;
             actionlint.enable = true;
             alejandra.enable = true;
           };
@@ -88,7 +78,7 @@
       devShells.default = pkgs.mkShellNoCC {
         inherit (self.checks.${system}.pre-commit-check) shellHook;
         nativeBuildInputs =
-          pre-commit-pkgs
+          devShells-default-pkgs
           /*
           ++ [ clang ]
           */
