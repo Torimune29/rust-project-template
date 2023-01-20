@@ -15,6 +15,21 @@
       pkgs = import nixpkgs {inherit system;};
       pre-commit = pre-commit-hooks.lib."${system}".run;
       pre-commit-excludes = ["LICENSE" "CHANGELOG.md"];
+      pre-commit-pkgs = with pkgs; [
+        commitizen
+        typos
+        yamllint
+        nodePackages.markdownlint-cli
+        editorconfig-checker
+        black
+        python310Packages.flake8
+        hadolint
+        shellcheck
+        actionlint
+        alejandra
+
+        navi
+      ];
     in {
       packages = rec {
         default = pkgs.stdenv.mkDerivation {
@@ -72,21 +87,12 @@
       # `nix develop`
       devShells.default = pkgs.mkShellNoCC {
         inherit (self.checks.${system}.pre-commit-check) shellHook;
-        nativeBuildInputs = with pkgs; [
-          commitizen
-          typos
-          yamllint
-          nodePackages.markdownlint-cli
-          editorconfig-checker
-          black
-          python310Packages.flake8
-          hadolint
-          shellcheck
-          actionlint
-          alejandra
-
-          navi
-        ];
+        nativeBuildInputs =
+          pre-commit-pkgs
+          /*
+          ++ [ clang ]
+          */
+          ;
       };
     });
 }
