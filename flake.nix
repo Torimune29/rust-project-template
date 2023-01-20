@@ -84,6 +84,8 @@
           shellcheck
           actionlint
           alejandra
+
+          navi
         ];
       };
     });
