@@ -10,10 +10,22 @@
       set -euo pipefail
       echo "> Running \"${name}\" ..."
       ${script}
-      echo "✔ Done \"${name}\" ..."
+      echo "✔ Done \"${name}\" !"
     '';
     description = "${description}";
     example = "${example}";
+  };
+
+  pythonWrapper = {
+    commandWrapper,
+    libraries ? [],
+  }: {
+    name = "${commandWrapper.name}";
+    package = pkgs.writers.writePython3Bin "${commandWrapper.name}" {
+      libraries = libraries;
+    } "${commandWrapper.script}";
+    description = "${commandWrapper.description}";
+    example = "${commandWrapper.example}";
   };
 in [
   (commandWrapper {
@@ -37,5 +49,14 @@ in [
     script = ''
       echo "This is sample command."
     '';
+  })
+  (pythonWrapper {
+    commandWrapper = {
+      name = "pythontest";
+      script = builtins.readFile ./python/pythontest.py;
+      description = "python test";
+      example = "pythontest";
+    };
+    libraries = with pkgs.python3Packages; [pyyaml];
   })
 ]

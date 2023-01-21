@@ -78,7 +78,9 @@ flowchart TB
     ├── command-helper
     │   └── default.nix
     ├── commands
-    │   └── default.nix
+    │   ├── default.nix
+    │   └── python
+    │       └── pythontest.py
     └── pre-commit
         └── default.nix
 ```
@@ -103,6 +105,11 @@ sample
         (No description.)
     example:
         $ (No example.)
+pythontest
+    description:
+        python test
+    example:
+        $ pythontest
 
 ```
 
