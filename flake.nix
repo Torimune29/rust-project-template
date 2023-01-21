@@ -15,6 +15,10 @@
       pkgs = import nixpkgs {inherit system;};
       pre-commit = import ./tools/pre-commit {inherit system pre-commit-hooks;};
       defaultCommands = import ./tools/commands {inherit pkgs;};
+      commandHelper = import ./tools/command-helper {
+        inherit pkgs;
+        commands = defaultCommands;
+      };
       devShellsDefaultPkgs = with pkgs; [
         commitizen
         navi
@@ -28,7 +32,7 @@
       devShells.default = pkgs.mkShellNoCC {
         inherit (self.checks.${system}.pre-commit-check) shellHook;
         nativeBuildInputs =
-          devShellsDefaultPkgs ++ defaultCommands
+          devShellsDefaultPkgs ++ commandHelper
           # ++ [
           #   clang
           #   (pkgs.writeShellScriptBin "hello" ''
