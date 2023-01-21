@@ -17,7 +17,12 @@
       defaultCommands = import ./tools/commands {inherit pkgs;};
       commandHelper = import ./tools/command-helper {
         inherit pkgs;
-        commands = defaultCommands;
+        commands =
+          defaultCommands
+          /*
+          ++ customCommands
+          */
+          ;
       };
       devShellsDefaultPkgs = with pkgs; [
         commitizen
@@ -35,9 +40,6 @@
           devShellsDefaultPkgs ++ commandHelper
           # ++ [
           #   clang
-          #   (pkgs.writeShellScriptBin "hello" ''
-          #     echo hello world
-          #   '')
           # ]
           ;
       };

@@ -9,13 +9,13 @@
   usage = pkgs.lib.concatStrings (
     pkgs.lib.forEach commands (command:
       builtins.toString command.name
-      + "\n  description:\n    "
+      + "\n    description:\n        "
       + (
         if command.description == ""
         then descriptionDefaultText
         else builtins.toString command.description
       )
-      + "\n  example:\n    $ "
+      + "\n    example:\n        $ "
       + (
         if command.example == ""
         then exampleDefaultText

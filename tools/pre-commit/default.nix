@@ -20,6 +20,7 @@ in
         enable = true;
         excludes = excludes;
       };
+      mdsh.enable = true;
       # language
       black.enable = true;
       flake8.enable = true;
@@ -36,6 +37,8 @@ in
         # check editorconfig instead
         MD007 = false;
         MD013 = false;
+        # for mdsh
+        MD031 = false;
       };
     };
   }
