@@ -50,9 +50,6 @@ flowchart TB
         repo --CLI and CI--> Linting
         repo --CD--> Documentation
     end
-    subgraph SaaS
-        Code-review --requires--> GithubActions
-    end
     subgraph nix
         Pre-commit-hook --requires --> precommit
         Pre-commit-hook --requires --> commit
@@ -64,9 +61,27 @@ flowchart TB
 ## Directory Hierarchy
 
 * Follow [Folder-Structure-Conventions](https://github.com/kriasoft/Folder-Structure-Conventions)
-* Select:
-    * docs (not doc)
-    * tests (not test)
+
+`$ tree --noreport` as bash
+```bash
+.
+├── CHANGELOG.md
+├── LICENSE
+├── README.md
+├── docs
+│   ├── README.md
+│   ├── index.html
+│   └── template.md
+├── flake.lock
+├── flake.nix
+└── tools
+    ├── command-helper
+    │   └── default.nix
+    ├── commands
+    │   └── default.nix
+    └── pre-commit
+        └── default.nix
+```
 
 ## Custom command help
 

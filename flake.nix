@@ -25,8 +25,8 @@
           ;
       };
       devShellsDefaultPkgs = with pkgs; [
+        tree
         commitizen
-        navi
       ];
     in {
       checks = {

@@ -1,8 +1,0 @@
-% sample
-
-# sample echo string
-echo <string>
-
-# sample echo yes or no
-echo <yesno>
-$ yesno: echo 'yes no what?' | tr ' ' '\n'
