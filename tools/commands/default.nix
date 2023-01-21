@@ -1,9 +1,11 @@
 {pkgs, ...}: let
+  commandDescriptionDefaultText = "(No description.)";
+  commandExampleDefaultText = "(No example.)";
   commandWrapper = {
     name,
     script,
-    description ? "(No description.)",
-    example ? "(No example.)",
+    description ? "",
+    example ? "",
   }: {
     name = "${name}";
     package = pkgs.writeShellScriptBin "${name}" ''
@@ -44,10 +46,18 @@
   commandUsage = pkgs.lib.concatStrings (
     pkgs.lib.forEach commands (command:
       builtins.toString command.name
-      + "\n  description: "
-      + builtins.toString command.description
+      + "\n  description:\n    "
+      + (
+        if command.description == ""
+        then commandDescriptionDefaultText
+        else builtins.toString command.description
+      )
       + "\n  example:\n    $ "
-      + builtins.toString command.example
+      + (
+        if command.example == ""
+        then commandExampleDefaultText
+        else builtins.toString command.example
+      )
       + "\n")
   );
   helpCommand = commandWrapper {
@@ -58,8 +68,21 @@
       EOF
     '';
   };
+  # for check command examples validation
+  commandExamples = pkgs.lib.concatStrings (
+    pkgs.lib.forEach commands (command:
+      pkgs.lib.optionalString
+      (command.example != commandExampleDefaultText)
+      (builtins.toString command.example + "\n"))
+  );
+  testCommandExamples = commandWrapper {
+    name = "test-command-examples";
+    script = ''
+      ${commandExamples}
+    '';
+  };
 
   # for passing to devShells
   commandDerivations = pkgs.lib.forEach commands (command: command.package);
 in
-  commandDerivations ++ [helpCommand.package]
+  commandDerivations ++ [helpCommand.package testCommandExamples.package]

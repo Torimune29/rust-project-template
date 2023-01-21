@@ -16,5 +16,12 @@ jobs:
       - uses: cachix/install-nix-action@v18
         with:
           nix_path: nixpkgs=channel:nixos-unstable
-      - run: |
+      - name: pre-commit check
+        run: |
           nix develop --command pre-commit run --all-files
+      - name: help commands check
+        run: |
+          nix develop --command help-commands
+      - name: command examples validation
+        run: |
+          nix develop --command test-command-examples
