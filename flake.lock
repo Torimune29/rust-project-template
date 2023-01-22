@@ -7,11 +7,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1674396096,
-        "narHash": "sha256-xsrEFE5bC6ugZlEC1Qbh71ZEnKqHKnLD9xtCee1zt80=",
+        "lastModified": 1674399300,
+        "narHash": "sha256-TVHQB92V5/xqeJKCcayqArbKaChlUroQc1ChNs7aPaw=",
         "owner": "Torimune29",
         "repo": "nix-command-helper",
-        "rev": "b20e8a9baa66cfec80276dc310b7a7c9910aef72",
+        "rev": "22168d7a06cbf1a5be75e070725e5708fd807fd0",
         "type": "github"
       },
       "original": {

@@ -106,7 +106,7 @@ update-dependencies
         Update flake dependencies.
         If update depending flakes, run this.
     example:
-        $ update-dependencies
+        $ (No example.)
 reload-env
     description:
         Reload flake.
@@ -119,7 +119,7 @@ update-project-template
         Update project-template using git.
         It creates branch "template", and you can delete.
     example:
-        $ reload-env
+        $ (No example.)
 pythontest
     description:
         python test

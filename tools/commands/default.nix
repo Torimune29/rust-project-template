@@ -51,7 +51,6 @@ in [
     '';
     description = ''      Update flake dependencies.
               If update depending flakes, run this.'';
-    example = "update-dependencies";
   })
   (command {
     name = "reload-env";
@@ -72,7 +71,6 @@ in [
     '';
     description = ''      Update project-template using git.
               It creates branch "template", and you can delete.'';
-    example = "reload-env";
   })
   (pythonCommand {
     command = {
