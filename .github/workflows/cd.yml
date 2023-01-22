@@ -13,7 +13,13 @@ jobs:
         with:
           submodules: true
           fetch-depth: 0
-      - name: Generate
+      - uses: cachix/install-nix-action@v18
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - name: Generate custom command usage document
+        run: |
+          nix develop --command generate-document > docs/custom-command-usage.md
+      - name: Generate document
         run: |
           npx embedme "docs/**.md" "*.md" --source-root .
           git config --local user.email ""41898282+github-actions[bot]@users.noreply.github.com""

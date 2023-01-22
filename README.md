@@ -70,6 +70,7 @@ flowchart TB
 ├── README.md
 ├── docs
 │   ├── README.md
+│   ├── _sidebar.md
 │   ├── index.html
 │   └── template.md
 ├── flake.lock

@@ -10,21 +10,21 @@
   exampleDefaultText = "(No example.)";
   # generate help
   usage = pkgs.lib.concatStrings (
-    pkgs.lib.forEach commands (command:
-      builtins.toString command.name
-      + "\n    description:\n        "
-      + (
+    pkgs.lib.forEach commands (command: ''
+      ${builtins.toString command.name}
+          description:
+              ${
         if command.description == ""
         then descriptionDefaultText
         else builtins.toString command.description
-      )
-      + "\n    example:\n        $ "
-      + (
+      }
+          example:
+              ''$ ${
         if command.example == ""
         then exampleDefaultText
         else builtins.toString command.example
-      )
-      + "\n")
+      }
+    '')
   );
   help = pkgs.writeShellScriptBin "help-commands" ''
     set -euo pipefail
@@ -40,10 +40,50 @@
       (command.example != exampleDefaultText)
       (builtins.toString command.example + "\n"))
   );
-  testexamples = pkgs.writeShellScriptBin "test-command-examples" ''
+  testExamples = pkgs.writeShellScriptBin "test-command-examples" ''
     set -euo pipefail
     ${examples}
   '';
+
+  # generate usage markdown
+  usageMarkdown =
+    ''
+      # Command usage
+
+    ''
+    + pkgs.lib.concatStrings (
+      pkgs.lib.forEach commands (
+        command: ''
+          ## ${builtins.toString command.name}
+
+          ### description
+
+          ${
+            if command.description == ""
+            then descriptionDefaultText
+            else builtins.toString command.description
+          }
+
+          ### example
+
+          \`\`\`bash
+          ${
+            if command.example == ""
+            then exampleDefaultText
+            else builtins.toString command.example
+          }
+          \`\`\`
+
+        ''
+      )
+    );
+  generateDocument = pkgs.writeShellScriptBin "generate-document" ''
+    set -euo pipefail
+    cat <<EOF
+    ${usageMarkdown}
+    EOF
+  '';
+
   # for passing to devShells
   derivations = pkgs.lib.forEach commands (command: command.package);
 in
@@ -52,7 +92,7 @@ in
     nativeBuildInputs =
       nativeBuildInputs
       ++ derivations
-      ++ [help testexamples]
+      ++ [help testExamples generateDocument]
       # ++ [
       #   clang
       # ]
