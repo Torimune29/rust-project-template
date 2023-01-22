@@ -1,8 +1,4 @@
-{
-  project-path,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   command = {
     name,
     script,
