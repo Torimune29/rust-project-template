@@ -49,16 +49,34 @@ in [
     example = "check-all";
   })
   (command {
-    name = "update";
+    name = "update-dependencies";
     script = ''
       nix flake update --verbose
     '';
+    description = ''      Update flake dependencies.
+              If update depending flakes, run this.'';
+    example = "update-dependencies";
   })
   (command {
-    name = "reload-flake";
+    name = "reload-env";
     script = ''
       touch $(git rev-parse --show-toplevel)/flake.nix
     '';
+    description = ''      Reload flake.
+              If reload not flake.nix but .nix, nix-direnv does not reload nix env.
+              So run this to reload nix env force.'';
+    example = "reload-env";
+  })
+  (command {
+    name = "update-project-template";
+    script = ''
+      git remote add template http://github.com/Torimune29/project-template
+      git fetch --all
+      git merge template/main --allow-unrelated-histories
+    '';
+    description = ''      Update project-template using git.
+              It creates branch "template", and you can delete.'';
+    example = "reload-env";
   })
   (pythonCommand {
     command = {

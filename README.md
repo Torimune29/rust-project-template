@@ -86,6 +86,8 @@ flowchart TB
 
 ## Custom command help
 
+See: [GithubPages](https://torimune29.github.io/project-template/#/.generated/custom-command-usage)
+
 Use help command,
 `$ help-commands` as bash
 ```bash
@@ -99,16 +101,25 @@ check-all
         check all files using pre-commit
     example:
         $ check-all
-update
+update-dependencies
     description:
-        (No description.)
+        Update flake dependencies.
+        If update depending flakes, run this.
     example:
-        $ (No example.)
-reload-flake
+        $ update-dependencies
+reload-env
     description:
-        (No description.)
+        Reload flake.
+        If reload not flake.nix but .nix, nix-direnv does not reload nix env.
+        So run this to reload nix env force.
     example:
-        $ (No example.)
+        $ reload-env
+update-project-template
+    description:
+        Update project-template using git.
+        It creates branch "template", and you can delete.
+    example:
+        $ reload-env
 pythontest
     description:
         python test
