@@ -35,7 +35,7 @@ Update flake dependencies.
 ### example
 
 ```bash
-update-dependencies
+(No example.)
 ```
 
 ## reload-env
@@ -62,7 +62,7 @@ Update project-template using git.
 ### example
 
 ```bash
-reload-env
+(No example.)
 ```
 
 ## pythontest
