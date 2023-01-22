@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  commandWrapper = {
+  command = {
     name,
     script,
     description ? "",
@@ -16,19 +16,19 @@
     example = "${example}";
   };
 
-  pythonWrapper = {
-    commandWrapper,
+  pythonCommand = {
+    command,
     libraries ? [],
   }: {
-    name = "${commandWrapper.name}";
-    package = pkgs.writers.writePython3Bin "${commandWrapper.name}" {
+    name = "${command.name}";
+    package = pkgs.writers.writePython3Bin "${command.name}" {
       libraries = libraries;
-    } "${commandWrapper.script}";
-    description = "${commandWrapper.description}";
-    example = "${commandWrapper.example}";
+    } "${command.script}";
+    description = "${command.description}";
+    example = "${command.example}";
   };
 in [
-  (commandWrapper {
+  (command {
     name = "check";
     script = ''
       pre-commit run --files $@
@@ -36,7 +36,7 @@ in [
     description = "check files using pre-commit";
     example = "check README.md LICENSE";
   })
-  (commandWrapper {
+  (command {
     name = "check-all";
     script = ''
       pre-commit run --all-files
@@ -44,14 +44,14 @@ in [
     description = "check all files using pre-commit";
     example = "check-all";
   })
-  (commandWrapper {
+  (command {
     name = "sample";
     script = ''
       echo "This is sample command."
     '';
   })
-  (pythonWrapper {
-    commandWrapper = {
+  (pythonCommand {
+    command = {
       name = "pythontest";
       script = builtins.readFile ./python/pythontest.py;
       description = "python test";

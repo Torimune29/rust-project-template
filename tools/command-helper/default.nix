@@ -1,6 +1,9 @@
 {
   pkgs,
   commands,
+  shell ? "mkShellNoCC",
+  shellHook ? "",
+  nativeBuildInputs ? [],
   ...
 }: let
   descriptionDefaultText = "(No description.)";
@@ -44,4 +47,14 @@
   # for passing to devShells
   derivations = pkgs.lib.forEach commands (command: command.package);
 in
-  derivations ++ [help testexamples]
+  pkgs."${shell}" {
+    shellHook = shellHook;
+    nativeBuildInputs =
+      nativeBuildInputs
+      ++ derivations
+      ++ [help testexamples]
+      # ++ [
+      #   clang
+      # ]
+      ;
+  }

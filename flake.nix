@@ -15,33 +15,27 @@
       pkgs = import nixpkgs {inherit system;};
       pre-commit = import ./tools/pre-commit {inherit system pre-commit-hooks;};
       defaultCommands = import ./tools/commands {inherit pkgs;};
-      commandHelper = import ./tools/command-helper {
-        inherit pkgs;
-        commands =
-          defaultCommands
-          /*
-          ++ customCommands
-          */
-          ;
-      };
-      devShellsDefaultPkgs = with pkgs; [
-        tree
-        commitizen
-      ];
+      commandHelper = import ./tools/command-helper;
     in {
       checks = {
         build = self.packages.${system}.default;
         pre-commit-check = pre-commit;
       };
       # `nix develop`
-      devShells.default = pkgs.mkShellNoCC {
+      devShells.default = commandHelper {
+        inherit pkgs;
         inherit (self.checks.${system}.pre-commit-check) shellHook;
-        nativeBuildInputs =
-          devShellsDefaultPkgs ++ commandHelper
-          # ++ [
-          #   clang
-          # ]
+        shell = "mkShellNoCC";
+        commands =
+          defaultCommands
+          /*
+          ++ customCommands
+          */
           ;
+        nativeBuildInputs = with pkgs; [
+          tree
+          commitizen
+        ];
       };
     });
 }
