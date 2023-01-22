@@ -71,6 +71,7 @@ flowchart TB
 ├── docs
 │   ├── README.md
 │   ├── _sidebar.md
+│   ├── generated
 │   ├── index.html
 │   └── template.md
 ├── flake.lock

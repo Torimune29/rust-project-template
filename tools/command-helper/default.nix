@@ -48,6 +48,7 @@
   # generate usage markdown
   usageMarkdown =
     ''
+      <!-- markdownlint-disable -->
       # Command usage
 
     ''

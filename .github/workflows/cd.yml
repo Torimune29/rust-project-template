@@ -18,7 +18,7 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
       - name: Generate custom command usage document
         run: |
-          nix develop --command generate-document > docs/custom-command-usage.md
+          nix develop --command generate-document > docs/generated/custom-command-usage.md
       - name: Generate document
         run: |
           npx embedme "docs/**.md" "*.md" --source-root .

@@ -1,3 +1,3 @@
 <!-- markdownlint-disable -->
 * [Top](/)
-* [Custom command usage](/custom-command-usage.md)
+* [Custom command usage](/generated/custom-command-usage.md)
