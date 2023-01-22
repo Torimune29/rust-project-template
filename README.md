@@ -76,8 +76,6 @@ flowchart TB
 ├── flake.lock
 ├── flake.nix
 └── tools
-    ├── command-helper
-    │   └── default.nix
     ├── commands
     │   ├── default.nix
     │   └── python
@@ -101,7 +99,12 @@ check-all
         check all files using pre-commit
     example:
         $ check-all
-sample
+update
+    description:
+        (No description.)
+    example:
+        $ (No example.)
+reload-flake
     description:
         (No description.)
     example:

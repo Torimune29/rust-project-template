@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  project-path,
+  pkgs,
+  ...
+}: let
   command = {
     name,
     script,
@@ -45,9 +49,15 @@ in [
     example = "check-all";
   })
   (command {
-    name = "sample";
+    name = "update";
     script = ''
-      echo "This is sample command."
+      nix flake update --verbose
+    '';
+  })
+  (command {
+    name = "reload-flake";
+    script = ''
+      touch $(git rev-parse --show-toplevel)/flake.nix
     '';
   })
   (pythonCommand {
