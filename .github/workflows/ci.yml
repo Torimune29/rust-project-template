@@ -18,7 +18,7 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
       - name: generate custom command usage document
         run: |
-          nix develop --command generate-document 2>/dev/null > docs/.generated/custom-command-usage.md
+          nix develop --command bash -c "generate-document > docs/.generated/custom-command-usage.md"
       - name: nix pre-commit check
         run: |
           nix develop --command pre-commit run --all-files
