@@ -3,24 +3,22 @@
   pre-commit-hooks,
   ...
 }: let
-  excludes = ["LICENSE" "CHANGELOG.md"];
+  excludes =
+    ["LICENSE" "CHANGELOG.md"]
+    ++ (import ./project-specific.nix {});
 in
   pre-commit-hooks.lib."${system}".run {
     src = ./.;
+    excludes = excludes;
     hooks = {
       # common
       commitizen.enable = true;
       typos.enable = true;
       yamllint.enable = true;
-      markdownlint = {
-        enable = true;
-        excludes = excludes;
-      };
-      editorconfig-checker = {
-        enable = true;
-        excludes = excludes;
-      };
+      markdownlint.enable = true;
+      editorconfig-checker.enable = true;
       mdsh.enable = true;
+      eslint.enable = true;
       # language
       black.enable = true;
       flake8.enable = true;
