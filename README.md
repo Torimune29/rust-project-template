@@ -78,10 +78,12 @@ flowchart TB
 └── tools
     ├── commands
     │   ├── default.nix
+    │   ├── project-specific.nix
     │   └── python
     │       └── pythontest.py
     └── pre-commit
-        └── default.nix
+        ├── default.nix
+        └── project-specific.nix
 ```
 
 ## Custom command help
@@ -125,6 +127,11 @@ pythontest
         python test
     example:
         $ pythontest
+print-project-root
+    description:
+        Print project root path using git rev-parse
+    example:
+        $ print-project-root
 
 ```
 
