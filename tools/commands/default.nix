@@ -66,8 +66,14 @@ in
     (command {
       name = "update-project-template";
       script = ''
-        git remote add template http://github.com/Torimune29/project-template
-        git fetch --all
+        set +e
+        git fetch template > /dev/null
+        RET_FETCH=$?
+        set -e
+        if [ $RET_FETCH -ne 0 ]; then
+          git remote add template http://github.com/Torimune29/project-template
+          git fetch template > /dev/null
+        fi
         git merge template/main --allow-unrelated-histories
       '';
       description = ''        Update project-template using git.
