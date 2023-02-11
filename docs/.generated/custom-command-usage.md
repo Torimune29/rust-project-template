@@ -77,4 +77,16 @@ python test
 pythontest
 ```
 
+## print-project-root
+
+### description
+
+Print project root path using git rev-parse
+
+### example
+
+```bash
+print-project-root
+```
+
 
