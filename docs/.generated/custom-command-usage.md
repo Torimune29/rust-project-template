@@ -89,4 +89,17 @@ Print project root path using git rev-parse
 print-project-root
 ```
 
+## update-rust-project-template
+
+### description
+
+Update rust-project-template using git.
+        It creates branch "template", and you can delete.
+
+### example
+
+```bash
+(No example.)
+```
+
 
