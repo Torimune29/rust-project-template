@@ -22,7 +22,7 @@
       };
       commandHelper = command-helper.packages.${system}.default;
     in {
-      packages.default = pkgs.rustPlatform.buildRustPackage rec {
+      packages.default = pkgs.pkgsStatic.rustPlatform.buildRustPackage rec {
         name = "sample";
         src = ./.;
         cargoLock = {
