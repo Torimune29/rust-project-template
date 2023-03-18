@@ -48,10 +48,14 @@
           commitizen
           # for rust
           rustc
-          clippy
           cargo
+          clippy
           rustfmt
           rust-analyzer
+          cargo-deny
+          # for rust clippy
+          gcc
+          gnumake
         ];
       };
     });

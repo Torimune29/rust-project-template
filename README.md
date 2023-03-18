@@ -62,9 +62,23 @@ flowchart TB
 
 * Follow [Folder-Structure-Conventions](https://github.com/kriasoft/Folder-Structure-Conventions)
 
-`$ tree --noreport` as bash
+`$ git ls-tree -r --name-only HEAD | tree --fromfile --noreport` as bash
 ```bash
 .
+├── .codacy.yml
+├── .ecrc
+├── .editorconfig
+├── .envrc
+├── .github
+│   └── workflows
+│       ├── cd.yml
+│       └── ci.yml
+├── .gitignore
+├── .markdownlint-cli2.jsonc
+├── .tool-versions
+├── .vscode
+│   ├── extensions.json
+│   └── project.code-workspace
 ├── CHANGELOG.md
 ├── Cargo.lock
 ├── Cargo.toml

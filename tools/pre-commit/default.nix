@@ -27,6 +27,24 @@ in
       shfmt.enable = true;
       actionlint.enable = true;
       alejandra.enable = true;
+
+      # rust
+      rustfmt.enable = true;
+      cargo-check.enable = true;
+      clippy-custom = {
+        enable = true;
+        name = "clippy-custom";
+        entry = "cargo-clippy";
+        files = "\\.rs$";
+        pass_filenames = false;
+      };
+      cargo-deny = {
+        enable = true;
+        name = "cargo-deny";
+        entry = "cargo deny check";
+        files = "\\.rs$";
+        pass_filenames = false;
+      };
     };
 
     settings = {
