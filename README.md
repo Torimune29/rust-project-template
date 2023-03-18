@@ -65,8 +65,6 @@ flowchart TB
 `$ git ls-tree -r --name-only HEAD | tree --fromfile --noreport` as bash
 ```bash
 .
-├── .codacy.yml
-├── .ecrc
 ├── .editorconfig
 ├── .envrc
 ├── .github
@@ -74,11 +72,7 @@ flowchart TB
 │       ├── cd.yml
 │       └── ci.yml
 ├── .gitignore
-├── .markdownlint-cli2.jsonc
 ├── .tool-versions
-├── .vscode
-│   ├── extensions.json
-│   └── project.code-workspace
 ├── CHANGELOG.md
 ├── Cargo.lock
 ├── Cargo.toml
@@ -92,7 +86,6 @@ flowchart TB
 │   └── template.md
 ├── flake.lock
 ├── flake.nix
-├── package.json
 ├── src
 │   ├── budget.rs
 │   ├── main.rs
