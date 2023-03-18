@@ -66,6 +66,7 @@ flowchart TB
 ```bash
 .
 ├── CHANGELOG.md
+├── Cargo.lock
 ├── Cargo.toml
 ├── LICENSE
 ├── README.md
@@ -143,6 +144,12 @@ print-project-root
         Print project root path using git rev-parse
     example:
         $ print-project-root
+update-rust-project-template
+    description:
+        Update rust-project-template using git.
+        It creates branch "template", and you can delete.
+    example:
+        $ (No example.)
 
 ```
 

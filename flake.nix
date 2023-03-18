@@ -22,6 +22,13 @@
       };
       commandHelper = command-helper.packages.${system}.default;
     in {
+      packages.default = pkgs.rustPlatform.buildRustPackage rec {
+        name = "sample";
+        src = ./.;
+        cargoLock = {
+          lockFile = ./Cargo.lock;
+        };
+      };
       checks = {
         pre-commit-check = pre-commit;
       };
@@ -39,6 +46,12 @@
         nativeBuildInputs = with pkgs; [
           tree
           commitizen
+          # for rust
+          rustc
+          clippy
+          cargo
+          rustfmt
+          rust-analyzer
         ];
       };
     });
